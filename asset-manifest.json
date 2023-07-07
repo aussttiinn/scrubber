@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/scrubber-web/static/css/main.e6c13ad2.css",
-    "main.js": "/scrubber-web/static/js/main.a3a4b401.js",
-    "static/js/787.4d4c8106.chunk.js": "/scrubber-web/static/js/787.4d4c8106.chunk.js",
-    "index.html": "/scrubber-web/index.html",
-    "main.e6c13ad2.css.map": "/scrubber-web/static/css/main.e6c13ad2.css.map",
-    "main.a3a4b401.js.map": "/scrubber-web/static/js/main.a3a4b401.js.map",
-    "787.4d4c8106.chunk.js.map": "/scrubber-web/static/js/787.4d4c8106.chunk.js.map"
+    "main.css": "/scrubber/static/css/main.e6c13ad2.css",
+    "main.js": "/scrubber/static/js/main.e73c429c.js",
+    "static/js/787.4d4c8106.chunk.js": "/scrubber/static/js/787.4d4c8106.chunk.js",
+    "index.html": "/scrubber/index.html",
+    "main.e6c13ad2.css.map": "/scrubber/static/css/main.e6c13ad2.css.map",
+    "main.e73c429c.js.map": "/scrubber/static/js/main.e73c429c.js.map",
+    "787.4d4c8106.chunk.js.map": "/scrubber/static/js/787.4d4c8106.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.a3a4b401.js"
+    "static/js/main.e73c429c.js"
   ]
 }
