@@ -1,37 +1,51 @@
-import { useState } from "react";
-import { LoginSocialFacebook } from "reactjs-social-login";
-import { FacebookLoginButton } from "react-social-login-buttons";
+import React, { useEffect } from 'react';
 
 function App() {
-  const [profile, setProfile] = useState(null);
+  useEffect(() => {
+    const loadFacebookSDK = () => {
+      window.fbAsyncInit = function() {
+        window.FB.init({
+          appId: '232486652952887',
+          cookie: true,
+          xfbml: true,
+          version: 'v12.0'
+        });
+
+        window.FB.AppEvents.logPageView();
+      };
+
+      (function(d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+          return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, 'script', 'facebook-jssdk');
+    };
+
+    loadFacebookSDK();
+  }, []);
+
+  const handleFacebookLogin = () => {
+    window.FB.login(function(response) {
+      if (response.authResponse) {
+        console.log('Facebook login successful:', response.authResponse);
+      } else {
+        console.log('Facebook login failed:', response);
+      }
+    });
+  };
+
+  const currentDateTime = new Date().toTimeString();
 
   return (
     <div>
-      {!profile ? (
-        <LoginSocialFacebook
-          appId="232486652952887"
-          onResolve={(response) => {
-            console.log(response);
-            setProfile(response.data);
-          }}
-          onReject={(error) => {
-            console.log(error);
-          }}
-        >
-          <FacebookLoginButton />
-        </LoginSocialFacebook>
-      ) : (
-        ""
-      )}
-
-      {profile ? (
-        <div>
-          <h1>{profile.name}</h1>
-          <img src={profile.picture.data.url} />
-        </div>
-      ) : (
-        ""
-      )}
+      <p>Updated: {currentDateTime}</p>
+      <button onClick={handleFacebookLogin}>Login with Facebook</button>
     </div>
   );
 }
