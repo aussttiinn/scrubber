@@ -37,7 +37,7 @@ function App() {
       } else {
         console.log('Facebook login failed:', response);
       }
-    });
+    }, {scope: 'email'});
   };
 
   const currentDateTime = new Date().toTimeString();
